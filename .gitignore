@@ -1,0 +1,10 @@
+.DS_Store
+*.AppleDouble
+*.LSOverride
+Trashes
+Icon
+Thumbs.db
+ehthumbs.db
+._*
+node_modules
+package-lock.json

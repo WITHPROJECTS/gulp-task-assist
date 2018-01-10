@@ -1,0 +1,22 @@
+{
+  "name": "gulp-task-assist",
+  "version": "0.0.1",
+  "description": "Gulpを使ったタスクランナーを支援するクラス",
+  "main": "TaskAssist.js",
+  "private": true,
+  "engines": {
+    "node": "^8.9.3",
+    "npm": "^5.6.0"
+  },
+  "dependencies": {
+    "gulp": "^4.0.0",
+    "node-notifier": "^5.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:WITHPROJECTS/withpro-gulp-task-assist.git"
+  },
+  "author": "WITHPROJECTS inc.",
+  "homepage": "http://www.withprojects.co.jp/",
+  "license": "MIT"
+}
