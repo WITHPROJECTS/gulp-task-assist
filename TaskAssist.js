@@ -24,14 +24,16 @@ let objectMerge = ( base, add )=>{
     return base;
 }
 
-/** タスクの諸々の設定をサポートするクラス */
+/**
+ * タスクの諸々の設定をサポートするクラス
+ */
 class TaskAssist {
     /**
      * コンストラクタ
      * =========================================================================
      * 
-     * @param  {string}     [inputPath=__dirname]  root directory of input files.
-     * @param  {string}     [outputPath=__dirname] root directory of output files.
+     * @param  {string}     [inputPath=__dirname]  - 入力ファイルのルートディレクトリ
+     * @param  {string}     [outputPath=__dirname] - 出力ファイルのルートディレクトリ
      * @return {TaskAssist}
      */
     constructor ( inputPath = __dirname, outputPath = __dirname ) {
@@ -168,7 +170,7 @@ class TaskAssist {
      * @param  {string}     ext       拡張子の値
      * @return {TaskAssist}
      */
-    supportExt( type = '', ext ){
+    supportExt ( type = '', ext ) {
         this.ext[type] = ext;
         return this;
     }
@@ -180,7 +182,7 @@ class TaskAssist {
      * @param  {string}     name
      * @return {TaskAssist}
      */
-    setTask( name, obj, self ){
+    setTask ( name, obj, self ) {
         self = self || this;
         gulp.task( name, obj.task.bind(self) );
         return this;
@@ -195,7 +197,7 @@ class TaskAssist {
      * @param  {boolean}    [diff=true] true：差分　false：差し替え
      * @return {TaskAssist}
      */
-    setOption( name = '', param = {}, diff = true ){
+    setOption ( name = '', param = {}, diff = true ) {
         let ops = this.options;
 
         // 初回か差し替えモードの場合
