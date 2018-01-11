@@ -184,7 +184,11 @@ class TaskAssist {
      */
     setTask ( name, obj, self ) {
         self = self || this;
-        gulp.task( name, obj.task.bind(self) );
+        if ( obj.setFunc ) {
+            obj.setFunc( name, self );
+        } else {
+            gulp.task( name, obj.task.bind(self) );
+        }
         return this;
     }
     
