@@ -207,7 +207,6 @@ class TaskAssist {
      * @return {TaskAssist}
      */
     setOption ( name = '', param = {}, diff = true ) {
-        param.assist = this;
         let ops = this.options;
 
         // 初回か差し替えモードの場合
@@ -217,6 +216,8 @@ class TaskAssist {
         }
         // 差分だけ反映
         ops[name] = objectMerge( ops[name], param );
+
+        ops[name].assist = this;
         
         return this;
     }
