@@ -180,9 +180,14 @@ class TaskAssist {
      * =========================================================================
      * 
      * @param  {string}     name
+     * @param  {Object}     obj
+     * @param  {function}   obj.task    gulp task
+     * @param  {function}   obj.setFunc gulpタスクを登録する関数。省略した場合は自動で設定される
+     * @param  {Object}     self
      * @return {TaskAssist}
      */
     setTask ( name, obj, self ) {
+        obj.assist = this;
         self = self || this;
         if ( obj.setFunc ) {
             obj.setFunc( name, self );
@@ -202,6 +207,7 @@ class TaskAssist {
      * @return {TaskAssist}
      */
     setOption ( name = '', param = {}, diff = true ) {
+        param.assist = this;
         let ops = this.options;
 
         // 初回か差し替えモードの場合
