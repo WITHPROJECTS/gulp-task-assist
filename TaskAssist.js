@@ -209,10 +209,11 @@ class TaskAssist {
     setOption ( name = '', param = {}, diff = true ) {
         let ops = this.options;
 
+        if ( !ops.assist ) ops.assist = this;
+
         // 初回か差し替えモードの場合
         if ( ops[name] === undefined || diff === false ) {
             ops[name] = param;
-            ops[name].assist = this;
             return this;
         }
         // 差分だけ反映
