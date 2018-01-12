@@ -212,12 +212,11 @@ class TaskAssist {
         // 初回か差し替えモードの場合
         if ( ops[name] === undefined || diff === false ) {
             ops[name] = param;
+            ops[name].assist = this;
             return this;
         }
         // 差分だけ反映
         ops[name] = objectMerge( ops[name], param );
-
-        ops[name].assist = this;
         
         return this;
     }
